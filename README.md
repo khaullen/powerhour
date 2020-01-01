@@ -30,7 +30,7 @@
   var player;
   var songIndex = 0;
   function onYouTubeIframeAPIReady() {
-    const song = songs[songIndex++];
+    const song = songs[songIndex];
     player = new YT.Player('player', {
       height: '390',
       width: '640',
