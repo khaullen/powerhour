@@ -56,7 +56,6 @@ const songs = [
   //    the player should play for six seconds and then stop.
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
-      songIndex++;
       const song = songs[songIndex];
       player.loadVideoById({'videoId': song.id,
                'startSeconds': song.start,
