@@ -17,13 +17,13 @@
     }
   }
 
-  const songs = [
-    new Song('4JipHEz53sU', 77), 
-    new Song('dX3k_QDnzHE', 74),
-    new Song('17ozSeGw-fY', 131),
-    new Song('1ekZEVeXwek', 94)
-  ];
-
+const songs = [
+  new Song('4JipHEz53sU', 77), 
+  new Song('wnJ6LuUFpMo', 110),
+  new Song('dX3k_QDnzHE', 74),
+  new Song('17ozSeGw-fY', 131),
+  new Song('1ekZEVeXwek', 94)
+];
 
   // 3. This function creates an <iframe> (and YouTube player)
   //    after the API code downloads.
@@ -56,7 +56,8 @@
   //    the player should play for six seconds and then stop.
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
-      const song = songs[songIndex++];
+      songIndex++;
+      const song = songs[songIndex];
       player.loadVideoById({'videoId': song.id,
                'startSeconds': song.start,
                'endSeconds': song.end});
