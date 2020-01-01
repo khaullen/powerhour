@@ -57,9 +57,11 @@ const songs = [
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
       const song = songs[songIndex++/2];
-      player.loadVideoById({'videoId': song.id,
-               'startSeconds': song.start,
-               'endSeconds': song.end});
+      if (song) {
+        player.loadVideoById({'videoId': song.id,
+           'startSeconds': song.start,
+           'endSeconds': song.end});
+      }
     }
   }
 
